@@ -7,7 +7,7 @@ import {
   stuffDone,
 } from './studentSlice';
 
-const REACT_APP_BASE_URL = 'http://localhost:5000';
+const REACT_APP_BASE_URL = 'https://studentmanagementsystem-i147.onrender.com';
 export const getAllStudents = (id) => async (dispatch) => {
   dispatch(getRequest());
 

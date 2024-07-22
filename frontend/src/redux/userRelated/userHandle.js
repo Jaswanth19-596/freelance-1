@@ -13,7 +13,7 @@ import {
   getError,
 } from './userSlice';
 
-const REACT_APP_BASE_URL = 'http://localhost:5000';
+const REACT_APP_BASE_URL = 'https://studentmanagementsystem-i147.onrender.com';
 
 export const loginUser = (fields, role) => async (dispatch) => {
   dispatch(authRequest());
@@ -67,9 +67,7 @@ export const getUserDetails = (id, address) => async (dispatch) => {
   dispatch(getRequest());
 
   try {
-    const result = await axios.get(
-      `${REACT_APP_BASE_URL}/${address}/${id}`
-    );
+    const result = await axios.get(`${REACT_APP_BASE_URL}/${address}/${id}`);
     if (result.data) {
       dispatch(doneSuccess(result.data));
     }
