@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  Button,
   Grid,
   Box,
   Typography,
@@ -18,7 +17,6 @@ import {
 } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
-import bgpic from '../assets/designlogin.jpg';
 import { LightPurpleButton } from '../components/buttonStyles';
 import styled from 'styled-components';
 import { loginUser } from '../redux/userRelated/userHandle';
@@ -86,27 +84,27 @@ const LoginPage = ({ role }) => {
     if (name === 'studentName') setStudentNameError(false);
   };
 
-  const guestModeHandler = () => {
-    const password = 'zxc';
+  // const guestModeHandler = () => {
+  //   const password = 'zxc';
 
-    if (role === 'Admin') {
-      const email = 'yogendra@12';
-      const fields = { email, password };
-      setGuestLoader(true);
-      dispatch(loginUser(fields, role));
-    } else if (role === 'Student') {
-      const rollNum = '1';
-      const studentName = 'Dipesh Awasthi';
-      const fields = { rollNum, studentName, password };
-      setGuestLoader(true);
-      dispatch(loginUser(fields, role));
-    } else if (role === 'Teacher') {
-      const email = 'tony@12';
-      const fields = { email, password };
-      setGuestLoader(true);
-      dispatch(loginUser(fields, role));
-    }
-  };
+  //   if (role === 'Admin') {
+  //     const email = 'yogendra@12';
+  //     const fields = { email, password };
+  //     setGuestLoader(true);
+  //     dispatch(loginUser(fields, role));
+  //   } else if (role === 'Student') {
+  //     const rollNum = '1';
+  //     const studentName = 'Dipesh Awasthi';
+  //     const fields = { rollNum, studentName, password };
+  //     setGuestLoader(true);
+  //     dispatch(loginUser(fields, role));
+  //   } else if (role === 'Teacher') {
+  //     const email = 'tony@12';
+  //     const fields = { email, password };
+  //     setGuestLoader(true);
+  //     dispatch(loginUser(fields, role));
+  //   }
+  // };
 
   useEffect(() => {
     if (status === 'success' || currentUser !== null) {
